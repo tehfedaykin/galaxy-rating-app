@@ -1,0 +1,37 @@
+.stars {
+  cursor: pointer;
+
+	&:hover {
+    .star polygon {
+      fill: #ffd055 !important;
+    }
+  }
+  &.disabled:hover {
+    cursor: not-allowed;
+    .star  {
+      polygon {
+        fill: #d8d8d8 !important;
+      }
+    }
+  }
+
+	.star {
+    float: left;
+    margin: 0px 5px;
+
+    polygon {
+      fill: #d8d8d8;
+    }
+
+    &:hover ~ .star {
+      polygon {
+        fill: #d8d8d8 !important;
+      }
+    }
+    &.selected {
+      polygon {
+        fill: #ffd055 !important;
+      }
+    }
+  }
+}

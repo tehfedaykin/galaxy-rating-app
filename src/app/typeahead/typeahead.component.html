@@ -1,0 +1,12 @@
+<ng-template #template let-model="item" >
+  {{model.name}}
+</ng-template>
+<input 
+  [(ngModel)]="selected"
+  [typeahead]="data"
+  typeaheadOptionField="name"
+  [typeaheadMinLength]="0" 
+  [typeaheadItemTemplate]="template"
+  (typeaheadOnSelect)="onSelect($event)"
+  (blur)="onBlur($event)"
+  class="form-control">
