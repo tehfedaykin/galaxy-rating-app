@@ -23,13 +23,11 @@ export class AppComponent implements OnInit {
   }
 
   createForm() {
-    this.galaxyForm = this.fb.group({
-      galaxy: [{value: null, disabled: false}, [Validators.required]],
-      rating: [{value: null, disabled: true}, [Validators.required]],
-      name: [{value: null, disabled: false}, [Validators.required]]
-    })
-
-    
+    this.galaxyForm = new FormGroup({
+      galaxy: new FormControl({value: null, disabled: false}, [Validators.required]),
+      rating: new FormControl({value: null, disabled: true}, [Validators.required]),
+      name: new FormControl({value: null, disabled: false}, [Validators.required])
+    });
   }
 
   onFormChanges() {

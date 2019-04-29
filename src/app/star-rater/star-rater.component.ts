@@ -1,5 +1,4 @@
 import { Component, forwardRef } from '@angular/core';
-
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -41,12 +40,10 @@ export class StarRaterComponent implements ControlValueAccessor {
   public ratingText: string;
   public _value: number;
 
-  constructor() {}
-
   onChanged: any = () => {}
   onTouched: any = () => {}
 
-  writeValue(val) { 
+  writeValue(val) {
     this._value = val;
   }
 

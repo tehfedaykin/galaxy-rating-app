@@ -1,12 +1,23 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { TypeaheadComponent } from './typeahead/typeahead.component';
+import { StarRaterComponent } from './star-rater/star-rater.component';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        TypeaheadComponent,
+        StarRaterComponent
       ],
+      imports: [
+        ReactiveFormsModule,
+        FormsModule,
+        TypeaheadModule.forRoot()
+      ]
     }).compileComponents();
   }));
 
@@ -26,6 +37,16 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to galaxy-rating-app!');
+    expect(compiled.querySelector('h1').textContent).toContain('Galaxy Rating App');
   });
+
+  it('should enable the star rating formcontrol when galaxy formcontrol has a value', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const starRatingControl = fixture.componentInstance.galaxyForm.get('rating');
+    expect(starRatingControl.disabled).toBe(true);
+    fixture.componentInstance.galaxyForm.get('galaxy').patchValue(1);
+    fixture.detectChanges();
+    expect(starRatingControl.disabled).toBe(false);
+  })
 });

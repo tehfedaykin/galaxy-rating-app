@@ -17,8 +17,6 @@ export class TypeaheadComponent implements ControlValueAccessor {
   public selected;
   @Input() data;
 
-  constructor() { }
-
   onChanged: any = () => {}
   onTouched: any = () => {}
 
