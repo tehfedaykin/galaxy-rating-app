@@ -12,10 +12,7 @@ class TestHostComponent {
   @ViewChild(TypeaheadComponent)
   public typeaheadComponent: TypeaheadComponent;
 
-  public testData = [
-    {id: 1, name: 'foo'},
-    {id: 2, name: 'bar'}
-  ]
+  public testData = [{id: 1, name: 'foo'},{id: 2, name: 'bar'}];
   public galaxy: FormControl = new FormControl({value: null, disabled: false});
 }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GalaxyService } from './galaxy.service';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'gr-root',
@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   galaxies = [];
   galaxyForm: FormGroup;
 
-  constructor(private galaxyService: GalaxyService, private fb: FormBuilder) {
+  constructor(private galaxyService: GalaxyService) {
   }
   ngOnInit() {
     this.galaxyService.getGalaxies().subscribe((res) => {
