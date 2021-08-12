@@ -39,6 +39,7 @@ export class StarRaterComponent implements ControlValueAccessor {
   public disabled: boolean;
   public ratingText: string;
   public _value: number;
+  displayText: string;
 
   onChanged: any = () => {}
   onTouched: any = () => {}
