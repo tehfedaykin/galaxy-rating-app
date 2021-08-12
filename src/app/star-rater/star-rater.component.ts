@@ -13,7 +13,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     }   
   ]
 })
-export class StarRaterComponent implements ControlValueAccessor {
+export class StarRaterComponent implements ControlValueAccessor { 
+  // CVA let's us use input formControlName.
   public ratings = [
     {
       stars: 1,
