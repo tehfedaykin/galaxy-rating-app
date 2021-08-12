@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TypeaheadComponent } from './typeahead/typeahead.component';
@@ -6,7 +6,7 @@ import { StarRaterComponent } from './star-rater/star-rater.component';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Component, ViewChild } from '@angular/core';
 
 import { StarRaterComponent } from './star-rater.component';
@@ -18,7 +18,7 @@ describe('StarRaterComponent', () => {
   let hostFixture: ComponentFixture<TestHostComponent>;
   let testHostComponent: TestHostComponent;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ StarRaterComponent, TestHostComponent ],
       imports: [ ReactiveFormsModule ]
