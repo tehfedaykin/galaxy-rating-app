@@ -9,7 +9,7 @@ import { FormsModule, FormControl, ReactiveFormsModule, Validators } from '@angu
   template: '<gr-typeahead [data]="testData" [formControl]="galaxy"></gr-typeahead>'
 })
 class TestHostComponent {
-  @ViewChild(TypeaheadComponent, /* TODO: add static flag */ {})
+  @ViewChild(TypeaheadComponent, { static: false })
   public typeaheadComponent: TypeaheadComponent;
 
   public testData = [{id: 1, name: 'foo'},{id: 2, name: 'bar'}];

@@ -8,7 +8,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   template: '<gr-star-rater [formControl]="rating"></gr-star-rater>'
 })
 class TestHostComponent {
-  @ViewChild(StarRaterComponent, /* TODO: add static flag */ {})
+  @ViewChild(StarRaterComponent, { static: false })
   public starRaterComponent: StarRaterComponent;
 
   public rating: FormControl = new FormControl({value: null, disabled: false});
